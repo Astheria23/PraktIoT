@@ -264,6 +264,12 @@
                 gap: 8px;
             }
 
+            .logo span {
+                font-size: 28px;
+                font-weight: 800;
+                color: var(--primary);
+            }
+
             .logo i {
                 font-size: 32px;
                 color: var(--secondary);
@@ -715,13 +721,8 @@
             }
 
             .kit-image {
-                background: linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--secondary)
-                );
                 border-radius: 24px;
-                height: 400px;
+                height: auto;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -729,14 +730,11 @@
                 overflow: hidden;
             }
 
-            .kit-image::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
+            .kit-image img {
                 width: 100%;
-                height: 100%;
-                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+                height: auto;
+                object-fit: contain;
+                border-radius: 24px;
             }
 
             .kit-image i {
@@ -1132,7 +1130,7 @@
 
             /* Footer */
             footer {
-                background: var(--gray-900);
+                background: var(--gray-700);
                 color: var(--white);
                 padding: 80px 0 40px;
             }
@@ -1192,6 +1190,26 @@
                 color: var(--gray-400);
             }
 
+            .logo img {
+                height: 40px;
+            }
+
+            .supported-by {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                background: var(--white);
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-top: 15px;
+            }
+
+            .supported-by img {
+                height: 50px;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            }
+
             .contact-info i {
                 color: var(--secondary);
                 margin-top: 4px;
@@ -1201,8 +1219,8 @@
             .copyright {
                 text-align: center;
                 padding-top: 40px;
-                border-top: 1px solid var(--gray-700);
-                color: var(--gray-500);
+                border-top: 1px solid var(--gray-500);
+                color: var(--gray-400);
             }
 
             /* Ripple Effect */
@@ -1371,8 +1389,8 @@
             <div class="container">
                 <nav class="navbar">
                     <a href="#" class="logo">
-                        <i class="fas fa-microchip"></i>
-                        PraktIoT
+                        <img src="img/logo-praktiot.png" alt="PraktIoT Logo" />
+                        <span>PraktIoT</span>
                     </a>
                     <ul class="nav-links">
                         <li><a href="#about">Tentang</a></li>
@@ -1401,7 +1419,10 @@
                             Proyek ESP32
                         </h1>
                         <p>
-                            Pelatihan intensif 2 hari untuk siswa SMP/SMA/SMK. Belajar dasar-dasar ESP32 dan kontrol nirkabel, diakhiri dengan proyek puncak membangun Smart Home Hub yang terhubung ke internet.
+                            Pelatihan intensif 2 hari untuk siswa SMP/SMA/SMK.
+                            Belajar dasar-dasar ESP32 dan kontrol nirkabel,
+                            diakhiri dengan proyek puncak membangun Smart Home
+                            Hub yang terhubung ke internet.
                         </p>
 
                         <div class="hero-stats">
@@ -1473,7 +1494,11 @@
                     <div class="badge">Mengapa PraktIoT?</div>
                     <h2>Belajar IoT dengan ESP32 & WiFi</h2>
                     <p>
-                        Pelatihan intensif yang menggabungkan teori dan praktik langsung. Sembilan proyek pertama berfokus pada dasar-dasar ESP32 dan kontrol nirkabel, diakhiri dengan proyek puncak membangun Smart Home Hub yang terhubung ke internet.
+                        Pelatihan intensif yang menggabungkan teori dan praktik
+                        langsung. Sembilan proyek pertama berfokus pada
+                        dasar-dasar ESP32 dan kontrol nirkabel, diakhiri dengan
+                        proyek puncak membangun Smart Home Hub yang terhubung ke
+                        internet.
                     </p>
                 </div>
 
@@ -1546,7 +1571,8 @@
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Bangun sistem deteksi dini kebakaran menggunakan ESP32 dan flame sensor dengan respons otomatis.
+                                Bangun sistem deteksi dini kebakaran menggunakan
+                                ESP32 dan flame sensor dengan respons otomatis.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1586,7 +1612,9 @@
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Sistem monitoring gas berbahaya dengan ESP32 dan sensor gas, dengan peringatan dini dan simulasi ventilasi otomatis.
+                                Sistem monitoring gas berbahaya dengan ESP32 dan
+                                sensor gas, dengan peringatan dini dan simulasi
+                                ventilasi otomatis.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1620,13 +1648,12 @@
                             <div class="project-icon">
                                 <i class="fas fa-th"></i>
                             </div>
-                            <h3 class="project-title">
-                                Dot Matrix Berjalan
-                            </h3>
+                            <h3 class="project-title">Dot Matrix Berjalan</h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Ciptakan display teks berjalan dinamis menggunakan ESP32 dan dot matrix 8x8.
+                                Ciptakan display teks berjalan dinamis
+                                menggunakan ESP32 dan dot matrix 8x8.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1634,12 +1661,12 @@
                                     dot matrix 8x8 via ESP32
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Pemrograman
-                                    teks berjalan
+                                    <i class="fas fa-check-circle"></i>
+                                    Pemrograman teks berjalan
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Penggunaan
-                                    IC 74HC595
+                                    <i class="fas fa-check-circle"></i>
+                                    Penggunaan IC 74HC595
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i> Multiple
@@ -1660,13 +1687,12 @@
                             <div class="project-icon">
                                 <i class="fas fa-thermometer-half"></i>
                             </div>
-                            <h3 class="project-title">
-                                Pengukur Suhu Digital
-                            </h3>
+                            <h3 class="project-title">Pengukur Suhu Digital</h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Monitor suhu lingkungan secara real-time menggunakan ESP32 dengan display LCD.
+                                Monitor suhu lingkungan secara real-time
+                                menggunakan ESP32 dengan display LCD.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1678,8 +1704,8 @@
                                     hasil di LCD 1602
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Peringatan
-                                    suhu ekstrim dengan LED
+                                    <i class="fas fa-check-circle"></i>
+                                    Peringatan suhu ekstrim dengan LED
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i>
@@ -1706,7 +1732,8 @@
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Implementasi sistem lampu lalu lintas dengan ESP32, kontrol waktu otomatis dan mode darurat.
+                                Implementasi sistem lampu lalu lintas dengan
+                                ESP32, kontrol waktu otomatis dan mode darurat.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1746,7 +1773,8 @@
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Sistem pencahayaan otomatis menggunakan ESP32 yang responsif terhadap kondisi cahaya.
+                                Sistem pencahayaan otomatis menggunakan ESP32
+                                yang responsif terhadap kondisi cahaya.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1758,8 +1786,8 @@
                                     lampu otomatis
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Pengaturan
-                                    sensitivitas cahaya
+                                    <i class="fas fa-check-circle"></i>
+                                    Pengaturan sensitivitas cahaya
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i>
@@ -1784,7 +1812,8 @@
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Tong sampah pintar dengan ESP32 dan sensor jarak untuk membuka tutup otomatis.
+                                Tong sampah pintar dengan ESP32 dan sensor jarak
+                                untuk membuka tutup otomatis.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1818,11 +1847,14 @@
                             <div class="project-icon">
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <h3 class="project-title">Kontrol Servo dengan Remote</h3>
+                            <h3 class="project-title">
+                                Kontrol Servo dengan Remote
+                            </h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Sistem kontrol servo motor nirkabel menggunakan ESP32 dan remote IR.
+                                Sistem kontrol servo motor nirkabel menggunakan
+                                ESP32 dan remote IR.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1862,7 +1894,9 @@
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Sistem pencahayaan LED interaktif dengan ESP32 untuk berbagai mode dan efek pencahayaan yang dapat dikontrol dengan remote IR.
+                                Sistem pencahayaan LED interaktif dengan ESP32
+                                untuk berbagai mode dan efek pencahayaan yang
+                                dapat dikontrol dengan remote IR.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1900,7 +1934,10 @@
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Proyek puncak yang mengintegrasikan semua komponen dengan ESP32 untuk menciptakan sistem rumah pintar lengkap dengan dashboard web yang terhubung ke internet.
+                                Proyek puncak yang mengintegrasikan semua
+                                komponen dengan ESP32 untuk menciptakan sistem
+                                rumah pintar lengkap dengan dashboard web yang
+                                terhubung ke internet.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1947,7 +1984,10 @@
                 <div class="kit-content">
                     <div class="kit-visual animate-on-scroll">
                         <div class="kit-image">
-                            <i class="fas fa-wifi"></i>
+                            <img
+                                src="img/cover-buku.jpg"
+                                alt="PraktIoT Starter Pack"
+                            />
                         </div>
                     </div>
 
@@ -2083,7 +2123,7 @@
                     </div>
 
                     <div class="pricing-card featured animate-on-scroll">
-                        <div class="popular-badge">TERPOPULER</div>
+                        <div class="popular-badge">Recommended</div>
                         <div class="pricing-header">
                             <h3>Paket Lengkap</h3>
                             <p class="subtitle">
@@ -2461,10 +2501,23 @@
                     </div>
                 </div>
 
+                <div class="footer-column">
+                    <h3>Didukung Oleh</h3>
+                    <div class="supported-by">
+                        <img
+                            src="img/IRC.webp"
+                            alt="Informatics Research Center"
+                        />
+                        <img
+                            src="img/Tiga Selaras.png"
+                            alt="Tiga Selaras Teknika Karyatama"
+                        />
+                    </div>
+                </div>
+
                 <div class="copyright">
                     <p>
                         &copy; 2024 TIGA SELARAS TEKNIKA KARYATAMA. All Rights
-                        Reserved | Designed with ❤️ for Future ESP32 Innovators
                     </p>
                 </div>
             </div>
