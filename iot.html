@@ -1,0 +1,2604 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            PraktIoT - Pelatihan IoT Praktis untuk Siswa | 10 Proyek Menarik
+        </title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary: #3b82f6;
+                --primary-dark: #2563eb;
+                --primary-light: #dbeafe;
+                --secondary: #10b981;
+                --secondary-dark: #059669;
+                --accent: #f59e0b;
+                --accent-dark: #d97706;
+                --dark: #0f172a;
+                --gray-900: #0f172a;
+                --gray-800: #1e293b;
+                --gray-700: #334155;
+                --gray-600: #475569;
+                --gray-500: #64748b;
+                --gray-400: #94a3b8;
+                --gray-300: #cbd5e1;
+                --gray-200: #e2e8f0;
+                --gray-100: #f1f5f9;
+                --gray-50: #f8fafc;
+                --white: #ffffff;
+                --whatsapp: #25d366;
+                --danger: #ef4444;
+                --warning: #f59e0b;
+                --success: #10b981;
+                --info: #3b82f6;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Inter", sans-serif;
+                line-height: 1.6;
+                color: var(--gray-800);
+                background-color: var(--gray-50);
+                overflow-x: hidden;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                line-height: 1.3;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .container-wide {
+                width: 100%;
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            section {
+                padding: 100px 0;
+                position: relative;
+            }
+
+            /* Animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fadeInLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            @keyframes fadeInRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            @keyframes pulse {
+                0%,
+                100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+            }
+
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            .animate-on-scroll {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.8s ease;
+            }
+
+            .animate-on-scroll.animated {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Buttons */
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 16px 32px;
+                background-color: var(--primary);
+                color: var(--white);
+                text-decoration: none;
+                border-radius: 12px;
+                font-weight: 600;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .btn::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent
+                );
+                transition: left 0.5s;
+            }
+
+            .btn:hover::before {
+                left: 100%;
+            }
+
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.4);
+            }
+
+            .btn-primary:hover {
+                background-color: var(--primary-dark);
+            }
+
+            .btn-secondary {
+                background-color: var(--secondary);
+            }
+
+            .btn-secondary:hover {
+                background-color: var(--secondary-dark);
+                box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.4);
+            }
+
+            .btn-whatsapp {
+                background-color: var(--whatsapp);
+            }
+
+            .btn-whatsapp:hover {
+                background-color: #128c7e;
+                box-shadow: 0 20px 25px -5px rgba(37, 211, 102, 0.4);
+            }
+
+            .btn-outline {
+                background-color: transparent;
+                border: 2px solid var(--primary);
+                color: var(--primary);
+            }
+
+            .btn-outline:hover {
+                background-color: var(--primary);
+                color: var(--white);
+            }
+
+            .btn-lg {
+                padding: 20px 40px;
+                font-size: 18px;
+                border-radius: 16px;
+            }
+
+            /* Header */
+            header {
+                background-color: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+                transition: all 0.3s ease;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 0;
+            }
+
+            .logo {
+                font-size: 28px;
+                font-weight: 800;
+                color: var(--primary);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .logo i {
+                font-size: 32px;
+                color: var(--secondary);
+            }
+
+            .nav-links {
+                display: flex;
+                list-style: none;
+                gap: 32px;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: var(--gray-700);
+                font-weight: 500;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            .nav-links a::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--primary);
+                transition: width 0.3s ease;
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            .nav-links a:hover {
+                color: var(--primary);
+            }
+
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+            }
+
+            .mobile-menu span {
+                width: 25px;
+                height: 3px;
+                background-color: var(--gray-700);
+                margin: 3px 0;
+                transition: 0.3s;
+            }
+
+            /* Hero Section */
+            .hero {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary) 0%,
+                    var(--primary-dark) 50%,
+                    var(--secondary) 100%
+                );
+                color: var(--white);
+                padding: 180px 0 120px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1200,101,1248,107,1296,128C1344,149,1392,187,1416,205.3L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>')
+                    no-repeat center bottom;
+                background-size: cover;
+            }
+
+            .hero-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                align-items: center;
+                position: relative;
+                z-index: 2;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+                font-weight: 800;
+                margin-bottom: 24px;
+                line-height: 1.1;
+                animation: fadeInLeft 1s ease;
+            }
+
+            .hero-text .highlight {
+                color: var(--accent);
+                text-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+            }
+
+            .hero-text p {
+                font-size: 1.25rem;
+                margin-bottom: 32px;
+                opacity: 0.95;
+                line-height: 1.7;
+                animation: fadeInLeft 1s ease 0.2s both;
+            }
+
+            .hero-stats {
+                display: flex;
+                gap: 32px;
+                margin-bottom: 40px;
+                animation: fadeInLeft 1s ease 0.4s both;
+            }
+
+            .stat {
+                text-align: center;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--accent);
+                display: block;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+
+            .hero-buttons {
+                display: flex;
+                gap: 16px;
+                flex-wrap: wrap;
+                animation: fadeInLeft 1s ease 0.6s both;
+            }
+
+            .hero-visual {
+                position: relative;
+                animation: fadeInRight 1s ease 0.3s both;
+            }
+
+            .hero-card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 24px;
+                padding: 40px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                animation: float 6s ease-in-out infinite;
+            }
+
+            .hero-card-icon {
+                width: 80px;
+                height: 80px;
+                background: var(--accent);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 24px;
+                animation: pulse 2s infinite;
+            }
+
+            .hero-card-icon i {
+                font-size: 2.5rem;
+                color: var(--white);
+            }
+
+            .hero-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 12px;
+            }
+
+            .hero-card p {
+                opacity: 0.9;
+                margin-bottom: 20px;
+            }
+
+            .hero-features {
+                list-style: none;
+            }
+
+            .hero-features li {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 8px;
+                font-size: 0.95rem;
+            }
+
+            .hero-features i {
+                color: var(--secondary);
+                font-size: 1.1rem;
+            }
+
+            /* Section Titles */
+            .section-header {
+                text-align: center;
+                margin-bottom: 80px;
+            }
+
+            .section-header .badge {
+                display: inline-block;
+                background: var(--primary-light);
+                color: var(--primary);
+                padding: 8px 20px;
+                border-radius: 50px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                margin-bottom: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 3rem;
+                font-weight: 800;
+                color: var(--gray-900);
+                margin-bottom: 20px;
+                position: relative;
+            }
+
+            .section-header p {
+                font-size: 1.2rem;
+                color: var(--gray-600);
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            /* About Section */
+            .about {
+                background: var(--white);
+            }
+
+            .features-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 32px;
+            }
+
+            .feature-card {
+                background: var(--white);
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                border: 1px solid var(--gray-200);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .feature-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+            }
+
+            .feature-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            }
+
+            .feature-icon {
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 24px;
+            }
+
+            .feature-icon i {
+                font-size: 2rem;
+                color: var(--white);
+            }
+
+            .feature-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 16px;
+                color: var(--gray-900);
+            }
+
+            .feature-card p {
+                color: var(--gray-600);
+                line-height: 1.7;
+            }
+
+            /* Projects Section */
+            .projects {
+                background: var(--gray-100);
+            }
+
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+                gap: 32px;
+            }
+
+            .project-card {
+                background: var(--white);
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                position: relative;
+                border: 1px solid var(--gray-200);
+            }
+
+            .project-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            }
+
+            .project-header {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+                color: var(--white);
+                padding: 24px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .project-header::before {
+                content: "";
+                position: absolute;
+                top: -50%;
+                right: -50%;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                transform: rotate(45deg);
+            }
+
+            .project-number {
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: 1.1rem;
+            }
+
+            .project-icon {
+                width: 60px;
+                height: 60px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 16px;
+            }
+
+            .project-icon i {
+                font-size: 1.8rem;
+                color: var(--white);
+            }
+
+            .project-title {
+                font-size: 1.3rem;
+                font-weight: 700;
+                margin: 0;
+                position: relative;
+                z-index: 1;
+            }
+
+            .project-body {
+                padding: 32px 24px;
+            }
+
+            .project-description {
+                color: var(--gray-600);
+                margin-bottom: 24px;
+                line-height: 1.6;
+            }
+
+            .project-features {
+                list-style: none;
+            }
+
+            .project-features li {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 12px;
+                color: var(--gray-700);
+                font-size: 0.95rem;
+            }
+
+            .project-features i {
+                color: var(--secondary);
+                font-size: 1rem;
+                width: 16px;
+            }
+
+            .project-tech {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 20px;
+            }
+
+            .tech-tag {
+                background: var(--gray-100);
+                color: var(--gray-700);
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+
+            /* Kit Section */
+            .kit {
+                background: var(--white);
+            }
+
+            .kit-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 80px;
+                align-items: center;
+            }
+
+            .kit-visual {
+                position: relative;
+            }
+
+            .kit-image {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+                border-radius: 24px;
+                height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .kit-image::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            }
+
+            .kit-image i {
+                font-size: 6rem;
+                color: var(--white);
+                opacity: 0.9;
+                position: relative;
+                z-index: 1;
+                animation: float 4s ease-in-out infinite;
+            }
+
+            .kit-details h3 {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--gray-900);
+                margin-bottom: 20px;
+            }
+
+            .kit-details p {
+                font-size: 1.1rem;
+                color: var(--gray-600);
+                margin-bottom: 32px;
+                line-height: 1.7;
+            }
+
+            .components-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                margin-bottom: 32px;
+            }
+
+            .component-item {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px;
+                background: var(--gray-50);
+                border-radius: 12px;
+                transition: all 0.3s ease;
+            }
+
+            .component-item:hover {
+                background: var(--primary-light);
+                transform: translateX(4px);
+            }
+
+            .component-item i {
+                color: var(--primary);
+                font-size: 1.2rem;
+                width: 20px;
+            }
+
+            .component-item span {
+                font-weight: 500;
+                color: var(--gray-700);
+                font-size: 0.95rem;
+            }
+
+            /* Pricing Section */
+            .pricing {
+                background: var(--gray-100);
+            }
+
+            .pricing-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 40px;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .pricing-card {
+                background: var(--white);
+                border-radius: 24px;
+                overflow: hidden;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                position: relative;
+                border: 1px solid var(--gray-200);
+                transition: all 0.3s ease;
+            }
+
+            .pricing-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            }
+
+            .pricing-card.featured {
+                border: 2px solid var(--secondary);
+                transform: scale(1.05);
+            }
+
+            .pricing-card.featured:hover {
+                transform: scale(1.05) translateY(-8px);
+            }
+
+            .popular-badge {
+                position: absolute;
+                top: 20px;
+                right: -35px;
+                background: var(--secondary);
+                color: var(--white);
+                padding: 8px 40px;
+                transform: rotate(45deg);
+                font-weight: 600;
+                font-size: 0.85rem;
+                z-index: 1;
+            }
+
+            .pricing-header {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+                color: var(--white);
+                padding: 40px 32px;
+                text-align: center;
+                position: relative;
+            }
+
+            .pricing-card.featured .pricing-header {
+                background: linear-gradient(
+                    135deg,
+                    var(--secondary),
+                    var(--secondary-dark)
+                );
+            }
+
+            .pricing-header h3 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+
+            .pricing-header .subtitle {
+                opacity: 0.9;
+                margin-bottom: 20px;
+            }
+
+            .price {
+                font-size: 3rem;
+                font-weight: 800;
+                margin-bottom: 8px;
+            }
+
+            .price-period {
+                opacity: 0.8;
+                font-size: 0.9rem;
+            }
+
+            .pricing-body {
+                padding: 40px 32px;
+            }
+
+            .pricing-features {
+                list-style: none;
+                margin-bottom: 32px;
+            }
+
+            .pricing-features li {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 16px;
+                color: var(--gray-700);
+            }
+
+            .pricing-features i {
+                color: var(--secondary);
+                font-size: 1.1rem;
+                margin-top: 2px;
+                width: 16px;
+            }
+
+            .pricing-features strong {
+                color: var(--gray-900);
+            }
+
+            /* Schedule Section */
+            .schedule {
+                background: var(--white);
+            }
+
+            .schedule-container {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .schedule-table {
+                width: 100%;
+                border-collapse: collapse;
+                background: var(--white);
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            }
+
+            .schedule-table th {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+                color: var(--white);
+                padding: 20px;
+                text-align: left;
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+
+            .schedule-table td {
+                padding: 20px;
+                border-bottom: 1px solid var(--gray-200);
+                vertical-align: top;
+            }
+
+            .schedule-table tr:nth-child(even) {
+                background: var(--gray-50);
+            }
+
+            .schedule-table tr:last-child td {
+                border-bottom: none;
+            }
+
+            .day-cell {
+                font-weight: 600;
+                color: var(--primary);
+                font-size: 1.1rem;
+            }
+
+            .session-cell {
+                font-weight: 500;
+                color: var(--gray-800);
+            }
+
+            .duration-cell {
+                font-weight: 600;
+                color: var(--secondary);
+            }
+
+            /* CTA Section */
+            .cta {
+                background: linear-gradient(
+                    135deg,
+                    var(--primary) 0%,
+                    var(--primary-dark) 50%,
+                    var(--secondary) 100%
+                );
+                color: var(--white);
+                text-align: center;
+                padding: 120px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .cta::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            }
+
+            .cta-content {
+                position: relative;
+                z-index: 1;
+            }
+
+            .cta h2 {
+                font-size: 3.5rem;
+                font-weight: 800;
+                margin-bottom: 24px;
+                line-height: 1.2;
+            }
+
+            .cta p {
+                font-size: 1.3rem;
+                max-width: 700px;
+                margin: 0 auto 40px;
+                opacity: 0.95;
+                line-height: 1.6;
+            }
+
+            /* Contact Section */
+            .contact {
+                background: var(--white);
+            }
+
+            .whatsapp-banner {
+                background: linear-gradient(135deg, var(--whatsapp), #128c7e);
+                color: var(--white);
+                padding: 32px;
+                border-radius: 20px;
+                margin-bottom: 60px;
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .whatsapp-banner::before {
+                content: "";
+                position: absolute;
+                top: -50%;
+                right: -20%;
+                width: 100%;
+                height: 200%;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                transform: rotate(15deg);
+            }
+
+            .whatsapp-icon {
+                font-size: 4rem;
+                position: relative;
+                z-index: 1;
+            }
+
+            .whatsapp-content {
+                position: relative;
+                z-index: 1;
+            }
+
+            .whatsapp-content h3 {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+
+            .whatsapp-content p {
+                opacity: 0.95;
+                font-size: 1.1rem;
+            }
+
+            .form-container {
+                background: var(--white);
+                border-radius: 20px;
+                padding: 50px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                border: 1px solid var(--gray-200);
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .form-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .form-group {
+                margin-bottom: 24px;
+            }
+
+            .form-group.full-width {
+                grid-column: 1 / -1;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: var(--gray-800);
+            }
+
+            .form-control {
+                width: 100%;
+                padding: 16px;
+                border: 2px solid var(--gray-200);
+                border-radius: 12px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                background: var(--white);
+            }
+
+            .form-control:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            }
+
+            textarea.form-control {
+                height: 120px;
+                resize: vertical;
+            }
+
+            select.form-control {
+                cursor: pointer;
+            }
+
+            /* Footer */
+            footer {
+                background: var(--gray-900);
+                color: var(--white);
+                padding: 80px 0 40px;
+            }
+
+            .footer-content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 50px;
+                margin-bottom: 50px;
+            }
+
+            .footer-column h3 {
+                font-size: 1.5rem;
+                margin-bottom: 24px;
+                position: relative;
+                color: var(--white);
+            }
+
+            .footer-column h3::after {
+                content: "";
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background: var(--secondary);
+                border-radius: 2px;
+            }
+
+            .footer-links {
+                list-style: none;
+            }
+
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+
+            .footer-links a {
+                color: var(--gray-400);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-links a:hover {
+                color: var(--white);
+            }
+
+            .contact-info {
+                list-style: none;
+            }
+
+            .contact-info li {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 16px;
+                color: var(--gray-400);
+            }
+
+            .contact-info i {
+                color: var(--secondary);
+                margin-top: 4px;
+                width: 20px;
+            }
+
+            .copyright {
+                text-align: center;
+                padding-top: 40px;
+                border-top: 1px solid var(--gray-700);
+                color: var(--gray-500);
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+                .hero-content {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                    text-align: center;
+                }
+
+                .kit-content {
+                    grid-template-columns: 1fr;
+                    gap: 50px;
+                }
+
+                .components-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                }
+
+                .mobile-menu {
+                    display: flex;
+                }
+
+                .hero {
+                    padding: 140px 0 80px;
+                }
+
+                .hero-text h1 {
+                    font-size: 2.5rem;
+                }
+
+                .hero-stats {
+                    justify-content: center;
+                }
+
+                .section-header h2 {
+                    font-size: 2.2rem;
+                }
+
+                .features-grid,
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .pricing-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .pricing-card.featured {
+                    transform: none;
+                }
+
+                .form-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .whatsapp-banner {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .form-container {
+                    padding: 30px 20px;
+                }
+
+                section {
+                    padding: 60px 0;
+                }
+
+                .cta h2 {
+                    font-size: 2.5rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .container {
+                    padding: 0 16px;
+                }
+
+                .hero-text h1 {
+                    font-size: 2rem;
+                }
+
+                .hero-buttons {
+                    flex-direction: column;
+                }
+
+                .btn {
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                .schedule-table {
+                    font-size: 0.9rem;
+                }
+
+                .schedule-table th,
+                .schedule-table td {
+                    padding: 12px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <nav class="navbar">
+                    <a href="#" class="logo">
+                        <i class="fas fa-microchip"></i>
+                        PraktIoT
+                    </a>
+                    <ul class="nav-links">
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#projects">Proyek</a></li>
+                        <li><a href="#kit">Starter Kit</a></li>
+                        <li><a href="#pricing">Harga</a></li>
+                        <li><a href="#schedule">Jadwal</a></li>
+                        <li><a href="#contact">Daftar</a></li>
+                    </ul>
+                    <div class="mobile-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>
+                            Kuasai <span class="highlight">IoT</span> dengan 10
+                            Proyek Praktis
+                        </h1>
+                        <p>
+                            Pelatihan intensif 2 hari untuk siswa SMP/SMA/SMK.
+                            Belajar Arduino, sensor, dan teknologi IoT melalui
+                            proyek nyata yang menarik dan aplikatif.
+                        </p>
+
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number">10</span>
+                                <span class="stat-label">Proyek Praktis</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">27</span>
+                                <span class="stat-label">Komponen Kit</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Jam Pelatihan</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-lg">
+                                <i class="fas fa-rocket"></i>
+                                Lihat Proyek
+                            </a>
+                            <a href="#contact" class="btn btn-outline btn-lg">
+                                <i class="fas fa-user-plus"></i>
+                                Daftar Sekarang
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="hero-card">
+                            <div class="hero-card-icon">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <h3>IoT Starter Pack 1.0</h3>
+                            <p>
+                                Paket lengkap dengan semua komponen yang
+                                dibutuhkan untuk 10 proyek IoT praktis
+                            </p>
+                            <ul class="hero-features">
+                                <li>
+                                    <i class="fas fa-check"></i> Arduino Uno
+                                    Protoshield
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> 27 Komponen
+                                    Elektronik
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Modul Panduan
+                                    Lengkap
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Sertifikat
+                                    Pelatihan
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="badge">Mengapa PraktIoT?</div>
+                    <h2>Belajar IoT dengan Pendekatan Praktis</h2>
+                    <p>
+                        Pelatihan intensif yang menggabungkan teori dan praktik
+                        langsung melalui 10 proyek IoT yang menarik dan
+                        aplikatif
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Pemrograman Arduino</h3>
+                        <p>
+                            Pelajari dasar-dasar pemrograman Arduino dari nol
+                            hingga mahir. Mulai dari variabel, fungsi, hingga
+                            kontrol sensor dan aktuator dengan pendekatan yang
+                            mudah dipahami.
+                        </p>
+                    </div>
+
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>10 Proyek Praktis</h3>
+                        <p>
+                            Setiap proyek dirancang untuk simulasi aplikasi
+                            dunia nyata. Dari sistem keamanan hingga otomasi
+                            rumah pintar yang dapat diterapkan langsung.
+                        </p>
+                    </div>
+
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Starter Kit Lengkap</h3>
+                        <p>
+                            Dapatkan paket lengkap berisi 27 komponen
+                            berkualitas tinggi. Semua yang dibutuhkan untuk
+                            menyelesaikan proyek dan eksperimen lanjutan di
+                            rumah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container-wide">
+                <div class="section-header animate-on-scroll">
+                    <div class="badge">Proyek Unggulan</div>
+                    <h2>10 Proyek IoT yang Menantang</h2>
+                    <p>
+                        Setiap proyek dirancang untuk memberikan pengalaman
+                        praktis dalam mengembangkan solusi IoT untuk masalah
+                        nyata
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">01</div>
+                            <div class="project-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3 class="project-title">
+                                Sistem Alarm Kebakaran
+                            </h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Bangun sistem deteksi dini kebakaran menggunakan
+                                flame sensor dengan respons otomatis dan
+                                peringatan visual-audio.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Deteksi
+                                    api dengan flame sensor
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Aktivasi
+                                    alarm buzzer otomatis
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Indikator LED peringatan multi-warna
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Sistem
+                                    reset manual dan otomatis
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">Flame Sensor</span>
+                                <span class="tech-tag">Buzzer</span>
+                                <span class="tech-tag">LED</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">02</div>
+                            <div class="project-icon">
+                                <i class="fas fa-gas-pump"></i>
+                            </div>
+                            <h3 class="project-title">
+                                Pencegah Kebocoran Gas
+                            </h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Sistem monitoring gas berbahaya dengan
+                                peringatan dini dan simulasi ventilasi otomatis
+                                untuk keamanan rumah tangga.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Deteksi
+                                    gas LPG dan gas berbahaya
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Sistem
+                                    peringatan bertingkat
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Simulasi
+                                    ventilasi otomatis
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Monitoring level gas real-time
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">Gas Sensor</span>
+                                <span class="tech-tag">Servo Motor</span>
+                                <span class="tech-tag">LCD Display</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">03</div>
+                            <div class="project-icon">
+                                <i class="fas fa-th"></i>
+                            </div>
+                            <h3 class="project-title">
+                                Dot Matrix Running Text
+                            </h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Ciptakan display teks berjalan dinamis
+                                menggunakan dot matrix 8x8 dengan berbagai pola
+                                animasi dan kontrol kecepatan.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Kontrol
+                                    dot matrix 8x8 penuh
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Pemrograman teks berjalan custom
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Penggunaan IC 74HC595 shift register
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Animasi
+                                    dan efek visual beragam
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">Dot Matrix</span>
+                                <span class="tech-tag">74HC595</span>
+                                <span class="tech-tag">Shift Register</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">04</div>
+                            <div class="project-icon">
+                                <i class="fas fa-thermometer-half"></i>
+                            </div>
+                            <h3 class="project-title">Sistem Pengukur Suhu</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Monitor suhu lingkungan secara real-time dengan
+                                display LCD dan sistem peringatan untuk suhu
+                                ekstrim.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Sensor
+                                    suhu presisi LM35
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Display
+                                    hasil di LCD 1602
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Peringatan suhu ekstrim
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Kalibrasi dan konversi unit
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">LM35</span>
+                                <span class="tech-tag">LCD 1602</span>
+                                <span class="tech-tag">ADC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">05</div>
+                            <div class="project-icon">
+                                <i class="fas fa-traffic-light"></i>
+                            </div>
+                            <h3 class="project-title">
+                                Simulasi Lampu Lalu Lintas
+                            </h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Implementasi sistem traffic light cerdas dengan
+                                kontrol waktu otomatis dan mode darurat manual.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Kontrol
+                                    LED RGB multi-warna
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Logika
+                                    timer lampu lalu lintas
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Mode
+                                    darurat dengan tombol
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Simulasi
+                                    persimpangan 4 arah
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">LED RGB</span>
+                                <span class="tech-tag">Push Button</span>
+                                <span class="tech-tag">Timer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">06</div>
+                            <div class="project-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="project-title">
+                                Sensor Cahaya dengan LDR
+                            </h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Sistem pencahayaan otomatis yang responsif
+                                terhadap kondisi cahaya lingkungan dengan
+                                pengaturan sensitivitas.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i> LDR
+                                    sebagai sensor cahaya ambient
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Kontrol
+                                    lampu otomatis cerdas
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Pengaturan sensitivitas dinamis
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Mode
+                                    manual dan otomatis
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">LDR</span>
+                                <span class="tech-tag">Relay</span>
+                                <span class="tech-tag">Potentiometer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">07</div>
+                            <div class="project-icon">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                            <h3 class="project-title">Tong Sampah Otomatis</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Tong sampah pintar dengan sensor jarak untuk
+                                membuka tutup otomatis, dilengkapi indikator
+                                kapasitas.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Sensor
+                                    ultrasonik deteksi jarak
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Kontrol
+                                    servo untuk buka tutup
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Pengaturan delay otomatis
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Indikator status LED
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">Ultrasonic</span>
+                                <span class="tech-tag">Servo SG90</span>
+                                <span class="tech-tag">LED Indicator</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">08</div>
+                            <div class="project-icon">
+                                <i class="fas fa-remote-control"></i>
+                            </div>
+                            <h3 class="project-title">
+                                Kendali Servo dengan Remote
+                            </h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Sistem kontrol servo motor nirkabel menggunakan
+                                remote IR dengan positioning presisi dan
+                                multiple preset.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Pemrograman IR receiver advanced
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Kontrol
+                                    servo SG90 dengan remote
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Multi-angle positioning akurat
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Memory
+                                    preset posisi
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">IR Receiver</span>
+                                <span class="tech-tag">Remote Control</span>
+                                <span class="tech-tag">Servo Motor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">09</div>
+                            <div class="project-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <h3 class="project-title">Motion Control LED</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Sistem pencahayaan LED interaktif dengan kontrol
+                                remote untuk berbagai mode dan efek pencahayaan
+                                dinamis.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Kontrol
+                                    LED multi-warna dengan remote
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Berbagai
+                                    mode pencahayaan kreatif
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Kontrol
+                                    intensitas cahaya PWM
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Efek
+                                    strobo dan fade
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">RGB LED</span>
+                                <span class="tech-tag">PWM Control</span>
+                                <span class="tech-tag">IR Remote</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-number">10</div>
+                            <div class="project-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3 class="project-title">Smart Home Automation</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Proyek final yang mengintegrasikan semua
+                                komponen untuk menciptakan sistem rumah pintar
+                                lengkap dan terintegrasi.
+                            </p>
+                            <ul class="project-features">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Integrasi multi-sensor dan aktuator
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Simulasi
+                                    sistem rumah pintar
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Kontrol
+                                    terpusat dengan Arduino
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Dashboard monitoring real-time
+                                </li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">Multi-Sensor</span>
+                                <span class="tech-tag">Integration</span>
+                                <span class="tech-tag">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kit Section -->
+        <section id="kit" class="kit">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="badge">Starter Kit</div>
+                    <h2>IoT Starter Pack 1.0</h2>
+                    <p>
+                        Paket lengkap dengan 27 komponen berkualitas tinggi
+                        untuk menyelesaikan semua proyek pelatihan
+                    </p>
+                </div>
+
+                <div class="kit-content">
+                    <div class="kit-visual animate-on-scroll">
+                        <div class="kit-image">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                    </div>
+
+                    <div class="kit-details animate-on-scroll">
+                        <h3>Komponen Utama Starter Pack</h3>
+                        <p>
+                            Setiap peserta akan mendapatkan paket lengkap dengan
+                            semua komponen yang diperlukan untuk 10 proyek IoT
+                            selama pelatihan dan eksperimen lanjutan di rumah.
+                        </p>
+
+                        <div class="components-grid">
+                            <div class="component-item">
+                                <i class="fas fa-microchip"></i>
+                                <span>Arduino Uno Protoshield</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-th-large"></i>
+                                <span>Breadboard MB-102</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-desktop"></i>
+                                <span>LCD Display 1602</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Sensor Suhu LM35</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-th"></i>
+                                <span>Dot Matrix 8x8</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-remote-control"></i>
+                                <span>IR Remote Kit</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Servo Motor SG90</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Set LED Multi-Warna</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-volume-up"></i>
+                                <span>Buzzer Aktif & Pasif</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-wave-square"></i>
+                                <span>Sensor Ultrasonik</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-fire"></i>
+                                <span>Flame Sensor</span>
+                            </div>
+                            <div class="component-item">
+                                <i class="fas fa-eye"></i>
+                                <span>LDR Light Sensor</span>
+                            </div>
+                        </div>
+
+                        <a href="#pricing" class="btn btn-secondary">
+                            <i class="fas fa-shopping-cart"></i>
+                            Dapatkan Starter Pack
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="badge">Investasi Terbaik</div>
+                    <h2>Paket Pelatihan</h2>
+                    <p>
+                        Pilih paket yang sesuai dengan kebutuhan dan budget Anda
+                    </p>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card animate-on-scroll">
+                        <div class="pricing-header">
+                            <h3>Paket Sewa</h3>
+                            <p class="subtitle">Pelatihan + Sewa Kit</p>
+                            <div class="price">Rp 750K</div>
+                            <p class="price-period">Per peserta</p>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li>
+                                    <i class="fas fa-check"></i> Pelatihan
+                                    intensif 12 jam (2 hari)
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Modul panduan
+                                    proyek lengkap
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Sewa Starter
+                                    Pack selama pelatihan
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Worksheet dan
+                                    dokumentasi proyek
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Sertifikat
+                                    pelatihan resmi
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Konsumsi
+                                    lengkap (2x snack + makan siang)
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Akses Wi-Fi dan
+                                    fasilitas lab
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Pendampingan
+                                    mentor ahli
+                                </li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline">
+                                <i class="fas fa-user-plus"></i>
+                                Daftar Paket Sewa
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card featured animate-on-scroll">
+                        <div class="popular-badge">TERPOPULER</div>
+                        <div class="pricing-header">
+                            <h3>Paket Lengkap</h3>
+                            <p class="subtitle">Pelatihan + Starter Pack</p>
+                            <div class="price">Rp 1.5JT</div>
+                            <p class="price-period">Per peserta</p>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <strong>Semua benefit Paket Sewa</strong>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <strong
+                                        >IoT Starter Pack 1.0 (dibawa
+                                        pulang)</strong
+                                    >
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> 27 komponen
+                                    elektronik lengkap
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Box plastik
+                                    penyimpanan rapi
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Bonus modul
+                                    pembelajaran lanjutan
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Akses grup
+                                    alumni eksklusif
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Konsultasi
+                                    pasca pelatihan 3 bulan
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> Garansi
+                                    komponen 3 bulan
+                                </li>
+                            </ul>
+                            <a href="#contact" class="btn btn-secondary">
+                                <i class="fas fa-star"></i>
+                                Ambil Paket Lengkap
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="schedule">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="badge">Jadwal Pelatihan</div>
+                    <h2>Struktur Pembelajaran</h2>
+                    <p>
+                        12 jam pelatihan intensif yang terstruktur dalam 2 hari
+                        untuk hasil maksimal
+                    </p>
+                </div>
+
+                <div class="schedule-container animate-on-scroll">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Hari</th>
+                                <th>Sesi</th>
+                                <th>Materi Pembelajaran</th>
+                                <th>Durasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" class="day-cell">Hari 1</td>
+                                <td class="session-cell">Sesi 1</td>
+                                <td>
+                                    <strong>Pengenalan IoT & Arduino</strong
+                                    ><br />
+                                    • Konsep dasar Internet of Things<br />
+                                    • Instalasi Arduino IDE & Library<br />
+                                    • Dasar pemrograman Arduino<br />
+                                    • Pengenalan komponen elektronik
+                                </td>
+                                <td class="duration-cell">1 Jam</td>
+                            </tr>
+                            <tr>
+                                <td class="session-cell">Sesi 2</td>
+                                <td>
+                                    <strong>Praktikum Proyek 1-5</strong><br />
+                                    • Sistem Alarm Kebakaran<br />
+                                    • Pencegah Kebocoran Gas<br />
+                                    • Dot Matrix Running Text<br />
+                                    • Pengukur Suhu Digital<br />
+                                    • Simulasi Lampu Lalu Lintas
+                                </td>
+                                <td class="duration-cell">5 Jam</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="day-cell">Hari 2</td>
+                                <td class="session-cell">Sesi 3</td>
+                                <td>
+                                    <strong>Praktikum Proyek 6-10</strong><br />
+                                    • Sensor Cahaya LDR<br />
+                                    • Tong Sampah Otomatis<br />
+                                    • Kendali Servo Remote<br />
+                                    • Motion Control LED<br />
+                                    • Smart Home Automation
+                                </td>
+                                <td class="duration-cell">5 Jam</td>
+                            </tr>
+                            <tr>
+                                <td class="session-cell">Sesi 4</td>
+                                <td>
+                                    <strong>Refleksi & Inovasi</strong><br />
+                                    • Review dan troubleshooting<br />
+                                    • Modifikasi proyek mandiri<br />
+                                    • Presentasi hasil karya<br />
+                                    • Sertifikasi dan penutupan
+                                </td>
+                                <td class="duration-cell">1 Jam</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content animate-on-scroll">
+                    <h2>Siap Menjadi IoT Developer?</h2>
+                    <p>
+                        Bergabunglah dengan ribuan siswa yang telah menguasai
+                        teknologi IoT melalui pelatihan praktis kami. Kuota
+                        terbatas untuk setiap batch!
+                    </p>
+                    <a href="#contact" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-rocket"></i>
+                        Daftar Sekarang Juga
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="badge">Pendaftaran Mudah</div>
+                    <h2>Daftar via WhatsApp</h2>
+                    <p>
+                        Isi formulir pendaftaran dan kirim langsung ke WhatsApp
+                        kami untuk proses yang lebih cepat
+                    </p>
+                </div>
+
+                <div class="whatsapp-banner animate-on-scroll">
+                    <div class="whatsapp-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="whatsapp-content">
+                        <h3>Pendaftaran Instan via WhatsApp!</h3>
+                        <p>
+                            Isi formulir di bawah ini dan data Anda akan
+                            otomatis terformat untuk dikirim ke WhatsApp kami.
+                            Tim customer service akan segera merespons untuk
+                            konfirmasi pendaftaran.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-container animate-on-scroll">
+                    <form id="whatsapp-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Nama Lengkap *</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    class="form-control"
+                                    required
+                                    placeholder="Masukkan nama lengkap"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-control"
+                                    required
+                                    placeholder="nama@email.com"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Nomor WhatsApp *</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    class="form-control"
+                                    required
+                                    placeholder="08xxxxxxxxxx"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="institution"
+                                    >Sekolah/Institusi *</label
+                                >
+                                <input
+                                    type="text"
+                                    id="institution"
+                                    class="form-control"
+                                    required
+                                    placeholder="Nama sekolah atau institusi"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="package">Pilih Paket *</label>
+                                <select
+                                    id="package"
+                                    class="form-control"
+                                    required
+                                >
+                                    <option value="">
+                                        -- Pilih Paket Pelatihan --
+                                    </option>
+                                    <option value="Paket Sewa (Rp 750.000)">
+                                        Paket Sewa - Rp 750.000
+                                    </option>
+                                    <option
+                                        value="Paket Lengkap (Rp 1.500.000)"
+                                    >
+                                        Paket Lengkap - Rp 1.500.000
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="participants">Jumlah Peserta</label>
+                                <input
+                                    type="number"
+                                    id="participants"
+                                    min="1"
+                                    max="50"
+                                    value="1"
+                                    class="form-control"
+                                    placeholder="Jumlah peserta"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Pesan Tambahan</label>
+                            <textarea
+                                id="message"
+                                class="form-control"
+                                placeholder="Pertanyaan atau permintaan khusus (opsional)"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-whatsapp btn-lg">
+                            <i class="fab fa-whatsapp"></i>
+                            Kirim via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>PraktIoT</h3>
+                        <p>
+                            Penyedia pelatihan IoT terdepan untuk siswa
+                            SMP/SMA/SMK dengan pendekatan praktis berbasis
+                            proyek nyata. Membangun generasi yang siap
+                            menghadapi era digital.
+                        </p>
+                        <div style="margin-top: 20px">
+                            <a
+                                href="#"
+                                style="
+                                    color: var(--secondary);
+                                    font-size: 1.5rem;
+                                    margin-right: 15px;
+                                "
+                                ><i class="fab fa-facebook"></i
+                            ></a>
+                            <a
+                                href="#"
+                                style="
+                                    color: var(--secondary);
+                                    font-size: 1.5rem;
+                                    margin-right: 15px;
+                                "
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a
+                                href="#"
+                                style="
+                                    color: var(--secondary);
+                                    font-size: 1.5rem;
+                                    margin-right: 15px;
+                                "
+                                ><i class="fab fa-youtube"></i
+                            ></a>
+                            <a
+                                href="#"
+                                style="
+                                    color: var(--secondary);
+                                    font-size: 1.5rem;
+                                "
+                                ><i class="fab fa-linkedin"></i
+                            ></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Menu Cepat</h3>
+                        <ul class="footer-links">
+                            <li><a href="#about">Tentang Pelatihan</a></li>
+                            <li><a href="#projects">10 Proyek IoT</a></li>
+                            <li><a href="#kit">Starter Kit</a></li>
+                            <li><a href="#pricing">Paket & Harga</a></li>
+                            <li><a href="#schedule">Jadwal Pelatihan</a></li>
+                            <li><a href="#contact">Pendaftaran</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Hubungi Kami</h3>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span
+                                    >Metro Trade Center Blok A-26<br />Jl.
+                                    Soekarno Hatta No. 590<br />Sekejati,
+                                    Bandung 40286</span
+                                >
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>(+62) 822-4944-6641</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>office@tigaselaras.com</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <span>(+62) 815-6041-142</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    <p>
+                        &copy; 2024 TIGA SELARAS TEKNIKA KARYATAMA. All Rights
+                        Reserved | Designed with ❤️ for Future Innovators
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(
+                        this.getAttribute("href"),
+                    );
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                });
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px 0px -100px 0px",
+                threshold: 0.1,
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animated");
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animate-on-scroll class
+            document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Header scroll effect
+            window.addEventListener("scroll", () => {
+                const header = document.querySelector("header");
+                if (window.scrollY > 100) {
+                    header.style.background = "rgba(255, 255, 255, 0.98)";
+                    header.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+                } else {
+                    header.style.background = "rgba(255, 255, 255, 0.95)";
+                    header.style.boxShadow =
+                        "0 4px 6px -1px rgba(0, 0, 0, 0.1)";
+                }
+            });
+
+            // WhatsApp Form Submission
+            document
+                .getElementById("whatsapp-form")
+                .addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    // Get form values
+                    const name = document.getElementById("name").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const phone = document.getElementById("phone").value.trim();
+                    const institution = document
+                        .getElementById("institution")
+                        .value.trim();
+                    const package = document.getElementById("package").value;
+                    const participants =
+                        document.getElementById("participants").value;
+                    const message = document
+                        .getElementById("message")
+                        .value.trim();
+
+                    // Validation
+                    if (!name || !email || !phone || !institution || !package) {
+                        alert(
+                            "Mohon lengkapi semua field yang wajib diisi (*)",
+                        );
+                        return;
+                    }
+
+                    // Format WhatsApp message
+                    const whatsappMessage = `🎓 *PENDAFTARAN PELATIHAN IoT*
+
+📝 *Data Peserta:*
+• Nama: ${name}
+• Email: ${email}
+• WhatsApp: ${phone}
+• Sekolah/Institusi: ${institution}
+
+📦 *Detail Pendaftaran:*
+• Paket: ${package}
+• Jumlah Peserta: ${participants} orang
+
+${message ? `💬 *Pesan Tambahan:*\n${message}\n` : ""}
+---
+Mohon konfirmasi ketersediaan jadwal dan proses pembayaran. Terima kasih! 🙏`;
+
+                    // Encode message for URL
+                    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+                    // WhatsApp number (replace with actual number)
+                    const whatsappNumber = "6281560411142";
+
+                    // Create WhatsApp URL
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                    // Open WhatsApp in new tab
+                    window.open(whatsappUrl, "_blank");
+
+                    // Show success message
+                    alert(
+                        "Formulir pendaftaran akan dikirim melalui WhatsApp. Silakan lanjutkan dengan mengirim pesan tersebut.",
+                    );
+
+                    // Optional: Reset form
+                    // this.reset();
+                });
+
+            // Mobile menu toggle (if needed)
+            const mobileMenu = document.querySelector(".mobile-menu");
+            const navLinks = document.querySelector(".nav-links");
+
+            if (mobileMenu) {
+                mobileMenu.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                    mobileMenu.classList.toggle("active");
+                });
+            }
+
+            // Add loading animation to buttons
+            document.querySelectorAll(".btn").forEach((btn) => {
+                btn.addEventListener("click", function (e) {
+                    if (this.type === "submit") {
+                        return; // Let form submission handle this
+                    }
+
+                    // Add ripple effect
+                    const ripple = document.createElement("span");
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.width = ripple.style.height = size + "px";
+                    ripple.style.left = x + "px";
+                    ripple.style.top = y + "px";
+                    ripple.classList.add("ripple");
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Add CSS for ripple effect
+            const style = document.createElement("style");
+            style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+            document.head.appendChild(style);
+
+            // Preload animations
+            window.addEventListener("load", () => {
+                document.body.classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>
