@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
-            PraktIoT - Pelatihan IoT Praktis untuk Siswa | 10 Proyek Menarik
+            PraktIoT - Pelatihan IoT Praktis dengan ESP32 | 10 Proyek Menarik
         </title>
         <link
             rel="stylesheet"
@@ -1205,6 +1205,35 @@
                 color: var(--gray-500);
             }
 
+            /* Ripple Effect */
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+
+            /* Form Error Styling */
+            .form-control.error {
+                border-color: var(--danger);
+                box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+            }
+
+            .error-message {
+                color: var(--danger);
+                font-size: 0.8rem;
+                margin-top: 4px;
+            }
+
             /* Responsive Design */
             @media (max-width: 1024px) {
                 .hero-content {
@@ -1225,7 +1254,31 @@
 
             @media (max-width: 768px) {
                 .nav-links {
-                    display: none;
+                    position: fixed;
+                    top: 80px;
+                    left: -100%;
+                    width: 100%;
+                    height: calc(100vh - 80px);
+                    background: var(--white);
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding-top: 50px;
+                    transition: left 0.3s ease;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                }
+
+                .nav-links.active {
+                    left: 0;
+                }
+
+                .nav-links li {
+                    margin: 20px 0;
+                }
+
+                .nav-links a {
+                    font-size: 1.2rem;
+                    padding: 10px 20px;
                 }
 
                 .mobile-menu {
@@ -1345,12 +1398,13 @@
                     <div class="hero-text">
                         <h1>
                             Kuasai <span class="highlight">IoT</span> dengan 10
-                            Proyek Praktis
+                            Proyek ESP32
                         </h1>
                         <p>
                             Pelatihan intensif 2 hari untuk siswa SMP/SMA/SMK.
-                            Belajar Arduino, sensor, dan teknologi IoT melalui
-                            proyek nyata yang menarik dan aplikatif.
+                            Belajar ESP32, sensor, dan teknologi IoT melalui
+                            proyek nyata yang menarik dan aplikatif dengan
+                            konektivitas WiFi.
                         </p>
 
                         <div class="hero-stats">
@@ -1383,17 +1437,18 @@
                     <div class="hero-visual">
                         <div class="hero-card">
                             <div class="hero-card-icon">
-                                <i class="fas fa-box-open"></i>
+                                <i class="fas fa-wifi"></i>
                             </div>
-                            <h3>IoT Starter Pack 1.0</h3>
+                            <h3>ESP32 IoT Starter Pack</h3>
                             <p>
-                                Paket lengkap dengan semua komponen yang
-                                dibutuhkan untuk 10 proyek IoT praktis
+                                Paket lengkap dengan ESP32 dan semua komponen
+                                yang dibutuhkan untuk 10 proyek IoT dengan
+                                konektivitas WiFi
                             </p>
                             <ul class="hero-features">
                                 <li>
-                                    <i class="fas fa-check"></i> Arduino Uno
-                                    Protoshield
+                                    <i class="fas fa-check"></i> ESP32
+                                    Development Board
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> 27 Komponen
@@ -1419,25 +1474,25 @@
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <div class="badge">Mengapa PraktIoT?</div>
-                    <h2>Belajar IoT dengan Pendekatan Praktis</h2>
+                    <h2>Belajar IoT dengan ESP32 & WiFi</h2>
                     <p>
                         Pelatihan intensif yang menggabungkan teori dan praktik
-                        langsung melalui 10 proyek IoT yang menarik dan
-                        aplikatif
+                        langsung melalui 10 proyek IoT menggunakan ESP32 dengan
+                        konektivitas WiFi
                     </p>
                 </div>
 
                 <div class="features-grid">
                     <div class="feature-card animate-on-scroll">
                         <div class="feature-icon">
-                            <i class="fas fa-code"></i>
+                            <i class="fas fa-wifi"></i>
                         </div>
-                        <h3>Pemrograman Arduino</h3>
+                        <h3>Pemrograman ESP32</h3>
                         <p>
-                            Pelajari dasar-dasar pemrograman Arduino dari nol
+                            Pelajari dasar-dasar pemrograman ESP32 dari nol
                             hingga mahir. Mulai dari variabel, fungsi, hingga
-                            kontrol sensor dan aktuator dengan pendekatan yang
-                            mudah dipahami.
+                            konektivitas WiFi dan kontrol sensor dengan
+                            pendekatan yang mudah dipahami.
                         </p>
                     </div>
 
@@ -1448,8 +1503,9 @@
                         <h3>10 Proyek Praktis</h3>
                         <p>
                             Setiap proyek dirancang untuk simulasi aplikasi
-                            dunia nyata. Dari sistem keamanan hingga otomasi
-                            rumah pintar yang dapat diterapkan langsung.
+                            dunia nyata menggunakan ESP32. Dari sistem keamanan
+                            hingga otomasi rumah pintar dengan konektivitas WiFi
+                            yang dapat diterapkan langsung.
                         </p>
                     </div>
 
@@ -1457,12 +1513,12 @@
                         <div class="feature-icon">
                             <i class="fas fa-tools"></i>
                         </div>
-                        <h3>Starter Kit Lengkap</h3>
+                        <h3>ESP32 Starter Kit</h3>
                         <p>
-                            Dapatkan paket lengkap berisi 27 komponen
-                            berkualitas tinggi. Semua yang dibutuhkan untuk
-                            menyelesaikan proyek dan eksperimen lanjutan di
-                            rumah.
+                            Dapatkan paket lengkap berisi ESP32 development
+                            board dan 27 komponen berkualitas tinggi. Semua yang
+                            dibutuhkan untuk menyelesaikan proyek dan eksperimen
+                            lanjutan di rumah.
                         </p>
                     </div>
                 </div>
@@ -1474,11 +1530,11 @@
             <div class="container-wide">
                 <div class="section-header animate-on-scroll">
                     <div class="badge">Proyek Unggulan</div>
-                    <h2>10 Proyek IoT yang Menantang</h2>
+                    <h2>10 Proyek IoT ESP32 yang Menantang</h2>
                     <p>
                         Setiap proyek dirancang untuk memberikan pengalaman
-                        praktis dalam mengembangkan solusi IoT untuk masalah
-                        nyata
+                        praktis dalam mengembangkan solusi IoT menggunakan ESP32
+                        untuk masalah nyata
                     </p>
                 </div>
 
@@ -1490,14 +1546,14 @@
                                 <i class="fas fa-fire"></i>
                             </div>
                             <h3 class="project-title">
-                                Sistem Alarm Kebakaran
+                                Sistem Alarm Kebakaran IoT
                             </h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
                                 Bangun sistem deteksi dini kebakaran menggunakan
-                                flame sensor dengan respons otomatis dan
-                                peringatan visual-audio.
+                                ESP32 dan flame sensor dengan notifikasi WiFi
+                                dan respons otomatis.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1505,22 +1561,22 @@
                                     api dengan flame sensor
                                 </li>
                                 <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Notifikasi real-time via WiFi
+                                </li>
+                                <li>
                                     <i class="fas fa-check-circle"></i> Aktivasi
                                     alarm buzzer otomatis
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i>
-                                    Indikator LED peringatan multi-warna
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Sistem
-                                    reset manual dan otomatis
+                                    Monitoring jarak jauh dengan ESP32
                                 </li>
                             </ul>
                             <div class="project-tech">
+                                <span class="tech-tag">ESP32</span>
                                 <span class="tech-tag">Flame Sensor</span>
-                                <span class="tech-tag">Buzzer</span>
-                                <span class="tech-tag">LED</span>
+                                <span class="tech-tag">WiFi</span>
                             </div>
                         </div>
                     </div>
@@ -1532,14 +1588,14 @@
                                 <i class="fas fa-gas-pump"></i>
                             </div>
                             <h3 class="project-title">
-                                Pencegah Kebocoran Gas
+                                Smart Gas Leak Detector
                             </h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Sistem monitoring gas berbahaya dengan
-                                peringatan dini dan simulasi ventilasi otomatis
-                                untuk keamanan rumah tangga.
+                                Sistem monitoring gas berbahaya dengan ESP32,
+                                peringatan dini via WiFi dan simulasi ventilasi
+                                otomatis untuk keamanan rumah tangga.
                             </p>
                             <ul class="project-features">
                                 <li>
@@ -1547,8 +1603,8 @@
                                     gas LPG dan gas berbahaya
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Sistem
-                                    peringatan bertingkat
+                                    <i class="fas fa-check-circle"></i> Alert
+                                    system via WiFi ESP32
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i> Simulasi
@@ -1556,13 +1612,13 @@
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i>
-                                    Monitoring level gas real-time
+                                    Dashboard monitoring real-time
                                 </li>
                             </ul>
                             <div class="project-tech">
+                                <span class="tech-tag">ESP32</span>
                                 <span class="tech-tag">Gas Sensor</span>
-                                <span class="tech-tag">Servo Motor</span>
-                                <span class="tech-tag">LCD Display</span>
+                                <span class="tech-tag">WiFi Dashboard</span>
                             </div>
                         </div>
                     </div>
@@ -1574,37 +1630,37 @@
                                 <i class="fas fa-th"></i>
                             </div>
                             <h3 class="project-title">
-                                Dot Matrix Running Text
+                                WiFi Controlled Dot Matrix
                             </h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
                                 Ciptakan display teks berjalan dinamis
-                                menggunakan dot matrix 8x8 dengan berbagai pola
-                                animasi dan kontrol kecepatan.
+                                menggunakan ESP32 dan dot matrix 8x8 dengan
+                                kontrol via WiFi dan web interface.
                             </p>
                             <ul class="project-features">
                                 <li>
                                     <i class="fas fa-check-circle"></i> Kontrol
-                                    dot matrix 8x8 penuh
+                                    dot matrix 8x8 via ESP32
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    Pemrograman teks berjalan custom
+                                    <i class="fas fa-check-circle"></i> Web
+                                    interface untuk input teks
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    Penggunaan IC 74HC595 shift register
+                                    <i class="fas fa-check-circle"></i> Kontrol
+                                    kecepatan via WiFi
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Animasi
-                                    dan efek visual beragam
+                                    <i class="fas fa-check-circle"></i> Multiple
+                                    animation patterns
                                 </li>
                             </ul>
                             <div class="project-tech">
+                                <span class="tech-tag">ESP32</span>
                                 <span class="tech-tag">Dot Matrix</span>
-                                <span class="tech-tag">74HC595</span>
-                                <span class="tech-tag">Shift Register</span>
+                                <span class="tech-tag">Web Interface</span>
                             </div>
                         </div>
                     </div>
@@ -1615,36 +1671,38 @@
                             <div class="project-icon">
                                 <i class="fas fa-thermometer-half"></i>
                             </div>
-                            <h3 class="project-title">Sistem Pengukur Suhu</h3>
+                            <h3 class="project-title">
+                                IoT Temperature Monitor
+                            </h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Monitor suhu lingkungan secara real-time dengan
-                                display LCD dan sistem peringatan untuk suhu
-                                ekstrim.
+                                Monitor suhu lingkungan secara real-time
+                                menggunakan ESP32 dengan display LCD dan
+                                dashboard web untuk monitoring jarak jauh.
                             </p>
                             <ul class="project-features">
                                 <li>
                                     <i class="fas fa-check-circle"></i> Sensor
-                                    suhu presisi LM35
+                                    suhu presisi dengan ESP32
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i> Display
                                     hasil di LCD 1602
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    Peringatan suhu ekstrim
+                                    <i class="fas fa-check-circle"></i> Web
+                                    dashboard monitoring
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    Kalibrasi dan konversi unit
+                                    <i class="fas fa-check-circle"></i> Data
+                                    logging via WiFi
                                 </li>
                             </ul>
                             <div class="project-tech">
-                                <span class="tech-tag">LM35</span>
-                                <span class="tech-tag">LCD 1602</span>
-                                <span class="tech-tag">ADC</span>
+                                <span class="tech-tag">ESP32</span>
+                                <span class="tech-tag">Temperature Sensor</span>
+                                <span class="tech-tag">Web Dashboard</span>
                             </div>
                         </div>
                     </div>
@@ -1656,36 +1714,37 @@
                                 <i class="fas fa-traffic-light"></i>
                             </div>
                             <h3 class="project-title">
-                                Simulasi Lampu Lalu Lintas
+                                Smart Traffic Light System
                             </h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
                                 Implementasi sistem traffic light cerdas dengan
-                                kontrol waktu otomatis dan mode darurat manual.
+                                ESP32, kontrol waktu otomatis dan remote control
+                                via WiFi.
                             </p>
                             <ul class="project-features">
                                 <li>
                                     <i class="fas fa-check-circle"></i> Kontrol
-                                    LED RGB multi-warna
+                                    LED RGB dengan ESP32
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Logika
-                                    timer lampu lalu lintas
+                                    <i class="fas fa-check-circle"></i> Timer
+                                    logic programmable
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Mode
-                                    darurat dengan tombol
+                                    <i class="fas fa-check-circle"></i> Remote
+                                    control via WiFi
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Simulasi
-                                    persimpangan 4 arah
+                                    <i class="fas fa-check-circle"></i>
+                                    Emergency mode activation
                                 </li>
                             </ul>
                             <div class="project-tech">
+                                <span class="tech-tag">ESP32</span>
                                 <span class="tech-tag">LED RGB</span>
-                                <span class="tech-tag">Push Button</span>
-                                <span class="tech-tag">Timer</span>
+                                <span class="tech-tag">WiFi Control</span>
                             </div>
                         </div>
                     </div>
@@ -1697,37 +1756,37 @@
                                 <i class="fas fa-lightbulb"></i>
                             </div>
                             <h3 class="project-title">
-                                Sensor Cahaya dengan LDR
+                                Smart Lighting with LDR
                             </h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Sistem pencahayaan otomatis yang responsif
-                                terhadap kondisi cahaya lingkungan dengan
-                                pengaturan sensitivitas.
+                                Sistem pencahayaan otomatis menggunakan ESP32
+                                yang responsif terhadap kondisi cahaya dengan
+                                kontrol via WiFi dan scheduling.
                             </p>
                             <ul class="project-features">
                                 <li>
                                     <i class="fas fa-check-circle"></i> LDR
-                                    sebagai sensor cahaya ambient
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Kontrol
-                                    lampu otomatis cerdas
+                                    sensor dengan ESP32
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i>
-                                    Pengaturan sensitivitas dinamis
+                                    Automatic lighting control
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Mode
-                                    manual dan otomatis
+                                    <i class="fas fa-check-circle"></i> WiFi
+                                    remote control
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Scheduling via web interface
                                 </li>
                             </ul>
                             <div class="project-tech">
-                                <span class="tech-tag">LDR</span>
-                                <span class="tech-tag">Relay</span>
-                                <span class="tech-tag">Potentiometer</span>
+                                <span class="tech-tag">ESP32</span>
+                                <span class="tech-tag">LDR Sensor</span>
+                                <span class="tech-tag">WiFi Scheduling</span>
                             </div>
                         </div>
                     </div>
@@ -1738,36 +1797,36 @@
                             <div class="project-icon">
                                 <i class="fas fa-trash"></i>
                             </div>
-                            <h3 class="project-title">Tong Sampah Otomatis</h3>
+                            <h3 class="project-title">IoT Smart Trash Bin</h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Tong sampah pintar dengan sensor jarak untuk
-                                membuka tutup otomatis, dilengkapi indikator
-                                kapasitas.
+                                Tong sampah pintar dengan ESP32, sensor jarak
+                                untuk membuka tutup otomatis, dan monitoring
+                                kapasitas via WiFi.
                             </p>
                             <ul class="project-features">
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Sensor
-                                    ultrasonik deteksi jarak
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Kontrol
-                                    servo untuk buka tutup
-                                </li>
-                                <li>
                                     <i class="fas fa-check-circle"></i>
-                                    Pengaturan delay otomatis
+                                    Ultrasonic sensor dengan ESP32
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    Indikator status LED
+                                    <i class="fas fa-check-circle"></i> Servo
+                                    control for lid opening
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Capacity
+                                    monitoring via WiFi
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Mobile
+                                    app notifications
                                 </li>
                             </ul>
                             <div class="project-tech">
+                                <span class="tech-tag">ESP32</span>
                                 <span class="tech-tag">Ultrasonic</span>
-                                <span class="tech-tag">Servo SG90</span>
-                                <span class="tech-tag">LED Indicator</span>
+                                <span class="tech-tag">IoT Monitoring</span>
                             </div>
                         </div>
                     </div>
@@ -1776,40 +1835,38 @@
                         <div class="project-header">
                             <div class="project-number">08</div>
                             <div class="project-icon">
-                                <i class="fas fa-remote-control"></i>
+                                <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <h3 class="project-title">
-                                Kendali Servo dengan Remote
-                            </h3>
+                            <h3 class="project-title">WiFi Servo Controller</h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
                                 Sistem kontrol servo motor nirkabel menggunakan
-                                remote IR dengan positioning presisi dan
-                                multiple preset.
+                                ESP32 dengan web interface dan mobile app
+                                control.
                             </p>
                             <ul class="project-features">
                                 <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    Pemrograman IR receiver advanced
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Kontrol
-                                    servo SG90 dengan remote
+                                    <i class="fas fa-check-circle"></i> ESP32
+                                    WiFi servo control
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i>
-                                    Multi-angle positioning akurat
+                                    Web-based control interface
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Memory
-                                    preset posisi
+                                    <i class="fas fa-check-circle"></i>
+                                    Multi-angle positioning
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Preset
+                                    position memory
                                 </li>
                             </ul>
                             <div class="project-tech">
-                                <span class="tech-tag">IR Receiver</span>
-                                <span class="tech-tag">Remote Control</span>
+                                <span class="tech-tag">ESP32</span>
                                 <span class="tech-tag">Servo Motor</span>
+                                <span class="tech-tag">Web Control</span>
                             </div>
                         </div>
                     </div>
@@ -1818,38 +1875,40 @@
                         <div class="project-header">
                             <div class="project-number">09</div>
                             <div class="project-icon">
-                                <i class="fas fa-magic"></i>
+                                <i class="fas fa-palette"></i>
                             </div>
-                            <h3 class="project-title">Motion Control LED</h3>
+                            <h3 class="project-title">
+                                WiFi RGB LED Controller
+                            </h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
-                                Sistem pencahayaan LED interaktif dengan kontrol
-                                remote untuk berbagai mode dan efek pencahayaan
-                                dinamis.
+                                Sistem pencahayaan LED interaktif dengan ESP32
+                                untuk berbagai mode dan efek pencahayaan yang
+                                dapat dikontrol via WiFi.
                             </p>
                             <ul class="project-features">
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Kontrol
-                                    LED multi-warna dengan remote
+                                    <i class="fas fa-check-circle"></i> RGB LED
+                                    control via ESP32
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Berbagai
-                                    mode pencahayaan kreatif
+                                    <i class="fas fa-check-circle"></i> Multiple
+                                    lighting modes
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Kontrol
-                                    intensitas cahaya PWM
+                                    <i class="fas fa-check-circle"></i> Color
+                                    picker web interface
                                 </li>
                                 <li>
-                                    <i class="fas fa-check-circle"></i> Efek
-                                    strobo dan fade
+                                    <i class="fas fa-check-circle"></i> Music
+                                    sync lighting effects
                                 </li>
                             </ul>
                             <div class="project-tech">
+                                <span class="tech-tag">ESP32</span>
                                 <span class="tech-tag">RGB LED</span>
-                                <span class="tech-tag">PWM Control</span>
-                                <span class="tech-tag">IR Remote</span>
+                                <span class="tech-tag">WiFi Interface</span>
                             </div>
                         </div>
                     </div>
@@ -1860,36 +1919,36 @@
                             <div class="project-icon">
                                 <i class="fas fa-home"></i>
                             </div>
-                            <h3 class="project-title">Smart Home Automation</h3>
+                            <h3 class="project-title">ESP32 Smart Home Hub</h3>
                         </div>
                         <div class="project-body">
                             <p class="project-description">
                                 Proyek final yang mengintegrasikan semua
-                                komponen untuk menciptakan sistem rumah pintar
-                                lengkap dan terintegrasi.
+                                komponen dengan ESP32 untuk menciptakan sistem
+                                rumah pintar lengkap dengan dashboard web.
                             </p>
                             <ul class="project-features">
                                 <li>
                                     <i class="fas fa-check-circle"></i>
-                                    Integrasi multi-sensor dan aktuator
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Simulasi
-                                    sistem rumah pintar
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i> Kontrol
-                                    terpusat dengan Arduino
+                                    Multi-sensor integration dengan ESP32
                                 </li>
                                 <li>
                                     <i class="fas fa-check-circle"></i>
-                                    Dashboard monitoring real-time
+                                    Centralized smart home control
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    Real-time web dashboard
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i> Mobile
+                                    app connectivity
                                 </li>
                             </ul>
                             <div class="project-tech">
-                                <span class="tech-tag">Multi-Sensor</span>
-                                <span class="tech-tag">Integration</span>
-                                <span class="tech-tag">Automation</span>
+                                <span class="tech-tag">ESP32</span>
+                                <span class="tech-tag">IoT Integration</span>
+                                <span class="tech-tag">Smart Home</span>
                             </div>
                         </div>
                     </div>
@@ -1902,32 +1961,35 @@
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <div class="badge">Starter Kit</div>
-                    <h2>IoT Starter Pack 1.0</h2>
+                    <h2>ESP32 IoT Starter Pack</h2>
                     <p>
-                        Paket lengkap dengan 27 komponen berkualitas tinggi
-                        untuk menyelesaikan semua proyek pelatihan
+                        Paket lengkap dengan ESP32 development board dan 27
+                        komponen berkualitas tinggi untuk menyelesaikan semua
+                        proyek pelatihan
                     </p>
                 </div>
 
                 <div class="kit-content">
                     <div class="kit-visual animate-on-scroll">
                         <div class="kit-image">
-                            <i class="fas fa-microchip"></i>
+                            <i class="fas fa-wifi"></i>
                         </div>
                     </div>
 
                     <div class="kit-details animate-on-scroll">
-                        <h3>Komponen Utama Starter Pack</h3>
+                        <h3>Komponen Utama ESP32 Starter Pack</h3>
                         <p>
                             Setiap peserta akan mendapatkan paket lengkap dengan
-                            semua komponen yang diperlukan untuk 10 proyek IoT
-                            selama pelatihan dan eksperimen lanjutan di rumah.
+                            ESP32 development board dan semua komponen yang
+                            diperlukan untuk 10 proyek IoT dengan konektivitas
+                            WiFi selama pelatihan dan eksperimen lanjutan di
+                            rumah.
                         </p>
 
                         <div class="components-grid">
                             <div class="component-item">
-                                <i class="fas fa-microchip"></i>
-                                <span>Arduino Uno Protoshield</span>
+                                <i class="fas fa-wifi"></i>
+                                <span>ESP32 Development Board</span>
                             </div>
                             <div class="component-item">
                                 <i class="fas fa-th-large"></i>
@@ -1939,15 +2001,15 @@
                             </div>
                             <div class="component-item">
                                 <i class="fas fa-thermometer-half"></i>
-                                <span>Sensor Suhu LM35</span>
+                                <span>Temperature Sensor</span>
                             </div>
                             <div class="component-item">
                                 <i class="fas fa-th"></i>
                                 <span>Dot Matrix 8x8</span>
                             </div>
                             <div class="component-item">
-                                <i class="fas fa-remote-control"></i>
-                                <span>IR Remote Kit</span>
+                                <i class="fas fa-infrared"></i>
+                                <span>IR Sensor Module</span>
                             </div>
                             <div class="component-item">
                                 <i class="fas fa-cog"></i>
@@ -1955,15 +2017,15 @@
                             </div>
                             <div class="component-item">
                                 <i class="fas fa-lightbulb"></i>
-                                <span>Set LED Multi-Warna</span>
+                                <span>RGB LED Strip</span>
                             </div>
                             <div class="component-item">
                                 <i class="fas fa-volume-up"></i>
-                                <span>Buzzer Aktif & Pasif</span>
+                                <span>Buzzer Module</span>
                             </div>
                             <div class="component-item">
                                 <i class="fas fa-wave-square"></i>
-                                <span>Sensor Ultrasonik</span>
+                                <span>Ultrasonic Sensor</span>
                             </div>
                             <div class="component-item">
                                 <i class="fas fa-fire"></i>
@@ -1977,7 +2039,7 @@
 
                         <a href="#pricing" class="btn btn-secondary">
                             <i class="fas fa-shopping-cart"></i>
-                            Dapatkan Starter Pack
+                            Dapatkan ESP32 Starter Pack
                         </a>
                     </div>
                 </div>
@@ -1989,7 +2051,7 @@
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <div class="badge">Investasi Terbaik</div>
-                    <h2>Paket Pelatihan</h2>
+                    <h2>Paket Pelatihan ESP32</h2>
                     <p>
                         Pilih paket yang sesuai dengan kebutuhan dan budget Anda
                     </p>
@@ -1999,7 +2061,7 @@
                     <div class="pricing-card animate-on-scroll">
                         <div class="pricing-header">
                             <h3>Paket Sewa</h3>
-                            <p class="subtitle">Pelatihan + Sewa Kit</p>
+                            <p class="subtitle">Pelatihan + Sewa Kit ESP32</p>
                             <div class="price">Rp 750K</div>
                             <p class="price-period">Per peserta</p>
                         </div>
@@ -2007,15 +2069,15 @@
                             <ul class="pricing-features">
                                 <li>
                                     <i class="fas fa-check"></i> Pelatihan
-                                    intensif 12 jam (2 hari)
+                                    intensif ESP32 12 jam (2 hari)
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> Modul panduan
-                                    proyek lengkap
+                                    proyek ESP32 lengkap
                                 </li>
                                 <li>
-                                    <i class="fas fa-check"></i> Sewa Starter
-                                    Pack selama pelatihan
+                                    <i class="fas fa-check"></i> Sewa ESP32
+                                    Starter Pack selama pelatihan
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> Worksheet dan
@@ -2023,7 +2085,7 @@
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> Sertifikat
-                                    pelatihan resmi
+                                    pelatihan ESP32 IoT
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> Konsumsi
@@ -2035,7 +2097,7 @@
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> Pendampingan
-                                    mentor ahli
+                                    mentor ESP32 ahli
                                 </li>
                             </ul>
                             <a href="#contact" class="btn btn-outline">
@@ -2049,7 +2111,9 @@
                         <div class="popular-badge">TERPOPULER</div>
                         <div class="pricing-header">
                             <h3>Paket Lengkap</h3>
-                            <p class="subtitle">Pelatihan + Starter Pack</p>
+                            <p class="subtitle">
+                                Pelatihan + ESP32 Starter Pack
+                            </p>
                             <div class="price">Rp 1.5JT</div>
                             <p class="price-period">Per peserta</p>
                         </div>
@@ -2062,9 +2126,13 @@
                                 <li>
                                     <i class="fas fa-check"></i>
                                     <strong
-                                        >IoT Starter Pack 1.0 (dibawa
+                                        >ESP32 IoT Starter Pack (dibawa
                                         pulang)</strong
                                     >
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i> ESP32
+                                    development board original
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> 27 komponen
@@ -2076,19 +2144,19 @@
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> Bonus modul
-                                    pembelajaran lanjutan
+                                    ESP32 WiFi programming
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> Akses grup
-                                    alumni eksklusif
+                                    alumni ESP32 eksklusif
                                 </li>
                                 <li>
                                     <i class="fas fa-check"></i> Konsultasi
-                                    pasca pelatihan 3 bulan
+                                    ESP32 pasca pelatihan 3 bulan
                                 </li>
                                 <li>
-                                    <i class="fas fa-check"></i> Garansi
-                                    komponen 3 bulan
+                                    <i class="fas fa-check"></i> Garansi ESP32
+                                    dan komponen 3 bulan
                                 </li>
                             </ul>
                             <a href="#contact" class="btn btn-secondary">
@@ -2106,10 +2174,10 @@
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <div class="badge">Jadwal Pelatihan</div>
-                    <h2>Struktur Pembelajaran</h2>
+                    <h2>Struktur Pembelajaran ESP32</h2>
                     <p>
-                        12 jam pelatihan intensif yang terstruktur dalam 2 hari
-                        untuk hasil maksimal
+                        12 jam pelatihan intensif ESP32 yang terstruktur dalam 2
+                        hari untuk hasil maksimal
                     </p>
                 </div>
 
@@ -2128,11 +2196,11 @@
                                 <td rowspan="2" class="day-cell">Hari 1</td>
                                 <td class="session-cell">Sesi 1</td>
                                 <td>
-                                    <strong>Pengenalan IoT & Arduino</strong
+                                    <strong>Pengenalan IoT & ESP32</strong
                                     ><br />
                                     • Konsep dasar Internet of Things<br />
-                                    • Instalasi Arduino IDE & Library<br />
-                                    • Dasar pemrograman Arduino<br />
+                                    • Setup ESP32 development environment<br />
+                                    • Dasar pemrograman ESP32 & WiFi<br />
                                     • Pengenalan komponen elektronik
                                 </td>
                                 <td class="duration-cell">1 Jam</td>
@@ -2140,12 +2208,13 @@
                             <tr>
                                 <td class="session-cell">Sesi 2</td>
                                 <td>
-                                    <strong>Praktikum Proyek 1-5</strong><br />
-                                    • Sistem Alarm Kebakaran<br />
-                                    • Pencegah Kebocoran Gas<br />
-                                    • Dot Matrix Running Text<br />
-                                    • Pengukur Suhu Digital<br />
-                                    • Simulasi Lampu Lalu Lintas
+                                    <strong>Praktikum Proyek ESP32 1-5</strong
+                                    ><br />
+                                    • IoT Fire Alarm System<br />
+                                    • Smart Gas Leak Detector<br />
+                                    • WiFi Controlled Dot Matrix<br />
+                                    • IoT Temperature Monitor<br />
+                                    • Smart Traffic Light System
                                 </td>
                                 <td class="duration-cell">5 Jam</td>
                             </tr>
@@ -2153,23 +2222,25 @@
                                 <td rowspan="2" class="day-cell">Hari 2</td>
                                 <td class="session-cell">Sesi 3</td>
                                 <td>
-                                    <strong>Praktikum Proyek 6-10</strong><br />
-                                    • Sensor Cahaya LDR<br />
-                                    • Tong Sampah Otomatis<br />
-                                    • Kendali Servo Remote<br />
-                                    • Motion Control LED<br />
-                                    • Smart Home Automation
+                                    <strong>Praktikum Proyek ESP32 6-10</strong
+                                    ><br />
+                                    • Smart Lighting with LDR<br />
+                                    • IoT Smart Trash Bin<br />
+                                    • WiFi Servo Controller<br />
+                                    • WiFi RGB LED Controller<br />
+                                    • ESP32 Smart Home Hub
                                 </td>
                                 <td class="duration-cell">5 Jam</td>
                             </tr>
                             <tr>
                                 <td class="session-cell">Sesi 4</td>
                                 <td>
-                                    <strong>Refleksi & Inovasi</strong><br />
-                                    • Review dan troubleshooting<br />
-                                    • Modifikasi proyek mandiri<br />
-                                    • Presentasi hasil karya<br />
-                                    • Sertifikasi dan penutupan
+                                    <strong>Refleksi & Inovasi ESP32</strong
+                                    ><br />
+                                    • Review dan troubleshooting ESP32<br />
+                                    • Modifikasi proyek ESP32 mandiri<br />
+                                    • Presentasi hasil karya IoT<br />
+                                    • Sertifikasi ESP32 dan penutupan
                                 </td>
                                 <td class="duration-cell">1 Jam</td>
                             </tr>
@@ -2183,11 +2254,11 @@
         <section class="cta">
             <div class="container">
                 <div class="cta-content animate-on-scroll">
-                    <h2>Siap Menjadi IoT Developer?</h2>
+                    <h2>Siap Menjadi ESP32 IoT Developer?</h2>
                     <p>
                         Bergabunglah dengan ribuan siswa yang telah menguasai
-                        teknologi IoT melalui pelatihan praktis kami. Kuota
-                        terbatas untuk setiap batch!
+                        teknologi IoT menggunakan ESP32 melalui pelatihan
+                        praktis kami. Kuota terbatas untuk setiap batch!
                     </p>
                     <a href="#contact" class="btn btn-secondary btn-lg">
                         <i class="fas fa-rocket"></i>
@@ -2279,13 +2350,15 @@
                                     <option value="">
                                         -- Pilih Paket Pelatihan --
                                     </option>
-                                    <option value="Paket Sewa (Rp 750.000)">
-                                        Paket Sewa - Rp 750.000
+                                    <option
+                                        value="Paket Sewa ESP32 (Rp 750.000)"
+                                    >
+                                        Paket Sewa ESP32 - Rp 750.000
                                     </option>
                                     <option
-                                        value="Paket Lengkap (Rp 1.500.000)"
+                                        value="Paket Lengkap ESP32 (Rp 1.500.000)"
                                     >
-                                        Paket Lengkap - Rp 1.500.000
+                                        Paket Lengkap ESP32 - Rp 1.500.000
                                     </option>
                                 </select>
                             </div>
@@ -2329,9 +2402,9 @@
                         <h3>PraktIoT</h3>
                         <p>
                             Penyedia pelatihan IoT terdepan untuk siswa
-                            SMP/SMA/SMK dengan pendekatan praktis berbasis
-                            proyek nyata. Membangun generasi yang siap
-                            menghadapi era digital.
+                            SMP/SMA/SMK dengan pendekatan praktis berbasis ESP32
+                            dan proyek nyata. Membangun generasi yang siap
+                            menghadapi era digital dengan teknologi WiFi.
                         </p>
                         <div style="margin-top: 20px">
                             <a
@@ -2375,9 +2448,11 @@
                     <div class="footer-column">
                         <h3>Menu Cepat</h3>
                         <ul class="footer-links">
-                            <li><a href="#about">Tentang Pelatihan</a></li>
-                            <li><a href="#projects">10 Proyek IoT</a></li>
-                            <li><a href="#kit">Starter Kit</a></li>
+                            <li>
+                                <a href="#about">Tentang Pelatihan ESP32</a>
+                            </li>
+                            <li><a href="#projects">10 Proyek ESP32 IoT</a></li>
+                            <li><a href="#kit">ESP32 Starter Kit</a></li>
                             <li><a href="#pricing">Paket & Harga</a></li>
                             <li><a href="#schedule">Jadwal Pelatihan</a></li>
                             <li><a href="#contact">Pendaftaran</a></li>
@@ -2414,7 +2489,7 @@
                 <div class="copyright">
                     <p>
                         &copy; 2024 TIGA SELARAS TEKNIKA KARYATAMA. All Rights
-                        Reserved | Designed with ❤️ for Future Innovators
+                        Reserved | Designed with ❤️ for Future ESP32 Innovators
                     </p>
                 </div>
             </div>
@@ -2499,7 +2574,7 @@
                     }
 
                     // Format WhatsApp message
-                    const whatsappMessage = `🎓 *PENDAFTARAN PELATIHAN IoT*
+                    const whatsappMessage = `🎓 *PENDAFTARAN PELATIHAN ESP32 IoT*
 
 📝 *Data Peserta:*
 • Nama: ${name}
@@ -2513,7 +2588,7 @@
 
 ${message ? `💬 *Pesan Tambahan:*\n${message}\n` : ""}
 ---
-Mohon konfirmasi ketersediaan jadwal dan proses pembayaran. Terima kasih! 🙏`;
+Mohon konfirmasi ketersediaan jadwal dan proses pembayaran untuk pelatihan ESP32 IoT. Terima kasih! 🙏`;
 
                     // Encode message for URL
                     const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -2529,14 +2604,14 @@ Mohon konfirmasi ketersediaan jadwal dan proses pembayaran. Terima kasih! 🙏`;
 
                     // Show success message
                     alert(
-                        "Formulir pendaftaran akan dikirim melalui WhatsApp. Silakan lanjutkan dengan mengirim pesan tersebut.",
+                        "Formulir pendaftaran ESP32 akan dikirim melalui WhatsApp. Silakan lanjutkan dengan mengirim pesan tersebut.",
                     );
 
                     // Optional: Reset form
                     // this.reset();
                 });
 
-            // Mobile menu toggle (if needed)
+            // Mobile menu toggle
             const mobileMenu = document.querySelector(".mobile-menu");
             const navLinks = document.querySelector(".nav-links");
 
@@ -2544,6 +2619,20 @@ Mohon konfirmasi ketersediaan jadwal dan proses pembayaran. Terima kasih! 🙏`;
                 mobileMenu.addEventListener("click", () => {
                     navLinks.classList.toggle("active");
                     mobileMenu.classList.toggle("active");
+
+                    // Animate hamburger menu
+                    const spans = mobileMenu.querySelectorAll("span");
+                    if (mobileMenu.classList.contains("active")) {
+                        spans[0].style.transform =
+                            "rotate(45deg) translate(5px, 5px)";
+                        spans[1].style.opacity = "0";
+                        spans[2].style.transform =
+                            "rotate(-45deg) translate(7px, -6px)";
+                    } else {
+                        spans[0].style.transform = "none";
+                        spans[1].style.opacity = "1";
+                        spans[2].style.transform = "none";
+                    }
                 });
             }
 
@@ -2574,31 +2663,152 @@ Mohon konfirmasi ketersediaan jadwal dan proses pembayaran. Terima kasih! 🙏`;
                 });
             });
 
-            // Add CSS for ripple effect
-            const style = document.createElement("style");
-            style.textContent = `
-            .ripple {
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.6);
-                transform: scale(0);
-                animation: ripple-animation 0.6s linear;
-                pointer-events: none;
-            }
-
-            @keyframes ripple-animation {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-            document.head.appendChild(style);
-
             // Preload animations
             window.addEventListener("load", () => {
                 document.body.classList.add("loaded");
             });
+
+            // Add scroll progress indicator
+            const createScrollProgress = () => {
+                const progressBar = document.createElement("div");
+                progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 3px;
+                background: linear-gradient(90deg, var(--primary), var(--secondary));
+                z-index: 9999;
+                transition: width 0.1s ease;
+            `;
+                document.body.appendChild(progressBar);
+
+                window.addEventListener("scroll", () => {
+                    const scrolled =
+                        (window.scrollY /
+                            (document.documentElement.scrollHeight -
+                                window.innerHeight)) *
+                        100;
+                    progressBar.style.width = scrolled + "%";
+                });
+            };
+
+            // Initialize scroll progress
+            createScrollProgress();
+
+            // Add counter animation for stats
+            const animateCounters = () => {
+                const counters = document.querySelectorAll(".stat-number");
+
+                counters.forEach((counter) => {
+                    const target = parseInt(counter.textContent);
+                    const increment = target / 100;
+                    let current = 0;
+
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current);
+                        }
+                    }, 20);
+                });
+            };
+
+            // Trigger counter animation when hero section is visible
+            const heroObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        heroObserver.unobserve(entry.target);
+                    }
+                });
+            });
+
+            const heroSection = document.querySelector(".hero");
+            if (heroSection) {
+                heroObserver.observe(heroSection);
+            }
+
+            // Add form validation enhancements
+            const enhanceFormValidation = () => {
+                const form = document.getElementById("whatsapp-form");
+                const inputs = form.querySelectorAll(".form-control");
+
+                inputs.forEach((input) => {
+                    // Add real-time validation
+                    input.addEventListener("blur", function () {
+                        validateField(this);
+                    });
+
+                    input.addEventListener("input", function () {
+                        if (this.classList.contains("error")) {
+                            validateField(this);
+                        }
+                    });
+                });
+
+                const validateField = (field) => {
+                    const value = field.value.trim();
+                    let isValid = true;
+                    let errorMessage = "";
+
+                    // Remove existing error styling
+                    field.classList.remove("error");
+                    const existingError =
+                        field.parentNode.querySelector(".error-message");
+                    if (existingError) {
+                        existingError.remove();
+                    }
+
+                    // Validate based on field type
+                    if (field.hasAttribute("required") && !value) {
+                        isValid = false;
+                        errorMessage = "Field ini wajib diisi";
+                    } else if (
+                        field.type === "email" &&
+                        value &&
+                        !isValidEmail(value)
+                    ) {
+                        isValid = false;
+                        errorMessage = "Format email tidak valid";
+                    } else if (
+                        field.type === "tel" &&
+                        value &&
+                        !isValidPhone(value)
+                    ) {
+                        isValid = false;
+                        errorMessage = "Format nomor telepon tidak valid";
+                    }
+
+                    if (!isValid) {
+                        field.classList.add("error");
+                        const errorDiv = document.createElement("div");
+                        errorDiv.className = "error-message";
+                        errorDiv.textContent = errorMessage;
+                        field.parentNode.appendChild(errorDiv);
+                    }
+
+                    return isValid;
+                };
+
+                const isValidEmail = (email) => {
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                };
+
+                const isValidPhone = (phone) => {
+                    return /^(\+62|62|0)[0-9]{9,13}$/.test(
+                        phone.replace(/\s/g, ""),
+                    );
+                };
+            };
+
+            // Initialize form validation
+            enhanceFormValidation();
+
+            console.log("PraktIoT ESP32 Landing Page loaded successfully! 🚀");
         </script>
     </body>
 </html>
