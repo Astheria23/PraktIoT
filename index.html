@@ -237,8 +237,7 @@
 
             /* Header */
             header {
-                background-color: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
+                background: var(--gray-700);
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
                 position: fixed;
                 width: 100%;
@@ -252,8 +251,7 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 20px 0;
-                background: var(--gray-700);
-                color: var(--white);
+                background: transparent;
             }
 
             .logo {
@@ -269,7 +267,7 @@
             .logo span {
                 font-size: 28px;
                 font-weight: 800;
-                color: var(--primary);
+                color: white;
             }
 
             .logo i {
@@ -285,7 +283,7 @@
 
             .nav-links a {
                 text-decoration: none;
-                color: var(--gray-700);
+                color: var(--white);
                 font-weight: 500;
                 transition: all 0.3s ease;
                 position: relative;
@@ -1417,7 +1415,8 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>
-                            Kuasai <span class="highlight">IoT</span> dengan 10 Modul Proyek PraktIoT
+                            Kuasai <span class="highlight">IoT</span> dengan 10
+                            Modul Proyek PraktIoT
                         </h1>
                         <p>
                             Pelatihan intensif 2 hari untuk siswa SMP/SMA/SMK.
@@ -1458,11 +1457,11 @@
                             <div class="hero-card-icon">
                                 <i class="fas fa-wifi"></i>
                             </div>
-                            <h3>PraktIoT Starter Pack 1.0 </h3>
+                            <h3>PraktIoT Starter Pack 1.0</h3>
                             <p>
                                 Paket lengkap dengan ESP32 dan semua komponen
-                                yang dibutuhkan untuk 10 proyek IoT dasar sampai dengan
-                                konektivitas WiFi
+                                yang dibutuhkan untuk 10 proyek IoT dasar sampai
+                                dengan konektivitas WiFi
                             </p>
                             <ul class="hero-features">
                                 <li>
@@ -1993,7 +1992,7 @@
                     </div>
 
                     <div class="kit-details animate-on-scroll">
-                        <h3>Komponen Utama PraktIoT Starter Pack 1.0 Kit </h3>
+                        <h3>Komponen Utama PraktIoT Starter Pack 1.0 Kit</h3>
                         <p>
                             Setiap peserta akan mendapatkan paket lengkap dengan
                             ESP32 development board dan semua komponen yang
@@ -2077,7 +2076,9 @@
                     <div class="pricing-card animate-on-scroll">
                         <div class="pricing-header">
                             <h3>Paket Sewa</h3>
-                            <p class="subtitle">Pelatihan + Sewa Kit PraktIot Starter Pack 1.0</p>
+                            <p class="subtitle">
+                                Pelatihan + Sewa Kit PraktIot Starter Pack 1.0
+                            </p>
                             <div class="price">Rp 750K</div>
                             <p class="price-period">Per peserta</p>
                         </div>
@@ -2565,12 +2566,12 @@
             window.addEventListener("scroll", () => {
                 const header = document.querySelector("header");
                 if (window.scrollY > 100) {
-                    header.style.background = "rgba(255, 255, 255, 0.98)";
-                    header.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+                    // header.style.background = "rgba(255, 255, 255, 0.98)";
+                    // header.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
                 } else {
-                    header.style.background = "rgba(255, 255, 255, 0.95)";
-                    header.style.boxShadow =
-                        "0 4px 6px -1px rgba(0, 0, 0, 0.1)";
+                    // header.style.background = "rgba(255, 255, 255, 0.95)";
+                    // header.style.boxShadow =
+                    //     "0 4px 6px -1px rgba(0, 0, 0, 0.1)";
                 }
             });
 

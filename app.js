@@ -32,6 +32,7 @@ document.querySelectorAll(".animate-on-scroll").forEach((el) => {
   observer.observe(el);
 });
 
+/*
 // Header scroll effect
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
@@ -43,6 +44,7 @@ window.addEventListener("scroll", () => {
     header.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1)";
   }
 });
+*/
 
 // WhatsApp Form Submission
 document
